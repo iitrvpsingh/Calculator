@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.calculator.dao.ArithmeticDAO">
+
+	<resultMap id="resultArith"
+		type="com.example.calculator.entity.ArithmeticEntity">
+	</resultMap>
+	
+	<insert id="addArithmetic"
+		parameterType="com.example.calculator.entity.ArithmeticEntity">
+		INSERT INTO calculator.cal (operandA, operandB,
+		operator, result ) VALUES
+		(#{operandA}, #{operandB}, #{operator},
+		#{result})
+	</insert>
+
+	<select id="getAllOperation" resultMap="resultArith">
+		select * from calculator.cal
+	</select>
+
+
+
+</mapper>
